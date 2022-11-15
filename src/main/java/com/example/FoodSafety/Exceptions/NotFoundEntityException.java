@@ -1,4 +1,4 @@
-package com.example.FoodSafety.Eceptions;
+package com.example.FoodSafety.Exceptions;
 
 public class NotFoundEntityException extends RuntimeException{
 

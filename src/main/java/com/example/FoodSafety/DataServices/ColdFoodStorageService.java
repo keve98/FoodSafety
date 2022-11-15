@@ -3,7 +3,7 @@ package com.example.FoodSafety.DataServices;
 
 import com.example.FoodSafety.DataModels.ColdFoodStorage;
 import com.example.FoodSafety.DataRepositories.ColdFoodStorageRepository;
-import com.example.FoodSafety.Eceptions.NotFoundEntityException;
+import com.example.FoodSafety.Exceptions.NotFoundEntityException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
