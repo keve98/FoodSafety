@@ -1,5 +1,6 @@
 package com.example.FoodSafety;
 
+import java.util.Arrays;
 import java.util.List;
 
 import com.example.FoodSafety.DataModels.*;
@@ -11,7 +12,12 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import com.example.FoodSafety.ServiceModels.*;
 import com.example.FoodSafety.Services.WebReaderService;
+import org.springframework.boot.web.servlet.ServletRegistrationBean;
 import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.Bean;
+
+import javax.faces.webapp.FacesServlet;
+import javax.servlet.ServletContext;
 
 @SpringBootApplication
 public class FoodSafetyApplication {
@@ -189,5 +195,18 @@ public class FoodSafetyApplication {
 				}
 			}
 		}
+	}
+
+	@Bean
+	ServletRegistrationBean jsfServletRegistration (ServletContext servletContext) {
+		//spring boot only works if this is set
+		servletContext.setInitParameter("com.sun.faces.forceLoadConfiguration", Boolean.TRUE.toString());
+
+		//FacesServlet registration
+		ServletRegistrationBean srb = new ServletRegistrationBean();
+		srb.setServlet(new FacesServlet());
+		srb.setUrlMappings(Arrays.asList("*.xhtml"));
+		srb.setLoadOnStartup(1);
+		return srb;
 	}
 }
