@@ -4,9 +4,11 @@ import com.example.FoodSafety.DataModels.SafeTemperatureCooking;
 import com.example.FoodSafety.DataRepositories.SafeTemperatireCookingRepository;
 import com.example.FoodSafety.Exceptions.NotFoundEntityException;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service
 public class SafeTemperatureCookingService {
 
     private final SafeTemperatireCookingRepository safeTemperatireCookingRepository;

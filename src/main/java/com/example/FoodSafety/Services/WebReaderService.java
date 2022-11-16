@@ -16,6 +16,10 @@ import com.example.FoodSafety.ServiceModels.FoodSafetyType;
 import com.example.FoodSafety.ServiceModels.FoodSafetyWebElement;
 import com.example.FoodSafety.ServiceModels.HamCookingWebElement;
 import com.example.FoodSafety.ServiceModels.MeatRoastingWebElement;
+import com.example.FoodSafety.ServiceModels.PoultryRoastingWebElement;
+import com.example.FoodSafety.ServiceModels.SafeTemperatureCookingWebElement;
+import com.example.FoodSafety.ServiceModels.TurkeyRoastingWebElement;
+import com.example.FoodSafety.ServiceModels.TurkeyThawingWebElement;
 
 @Service
 public class WebReaderService {
@@ -67,12 +71,12 @@ public class WebReaderService {
                 case TurkeyRoasting:
                     outerElement = doc.getElementsByClass("responsive-table-scroll-wrapper").get(3);
                     printable = outerElement.getElementsByClass("printable").first();
-                    table = printable.select("tbody").first();
+                    table = printable;
                     break;
                 case TurkeyThawing:
                     outerElement = doc.getElementsByClass("responsive-table-scroll-wrapper").get(4);
                     printable = outerElement.getElementsByClass("printable").first();
-                    table = printable.select("tbody").first();
+                    table = printable;
                     break;
                 default:
                     break;
@@ -186,16 +190,93 @@ public class WebReaderService {
                         }
                         break;
                     case PoultryRoasting:
-    
+                        for (Element e : table.children()) {
+                            if (e.select("th").first() != null) {
+                                String foodCategoryName = e.select("th").first().text();
+                                Elements attributes = e.select("td");
+                                Element[] attr = {};
+                                String foodTypes = e.select("th").first().text();
+                                String ovenTemperature = attributes.toArray(attr)[0].text();
+                                String timingInformation = attributes.toArray(attr)[1].text();
+                                PoultryRoastingWebElement toAdd = new PoultryRoastingWebElement(
+                                    foodCategoryName,
+                                    foodTypes,
+                                    ovenTemperature,
+                                    timingInformation);
+                                tableElements.add(toAdd);
+                            }
+                        }
                         break;
                     case SafeTemperatureCooking:
-    
+                        currentfoodCategory = "";
+                        for (Element e : table.children()) {
+                            if (e.select("th").size() == 1) {
+                                currentfoodCategory = e.select("th").first().text();
+                            }
+
+                            Elements attributes = e.select("td");
+                            Element[] attr = {};
+                            String foodType = attributes.toArray(attr)[0].text();
+                            String internalTemperatureInformation = attributes.toArray(attr)[1].text();
+                            SafeTemperatureCookingWebElement toAdd = new SafeTemperatureCookingWebElement(
+                                currentfoodCategory,
+                                foodType,
+                                internalTemperatureInformation);
+                            tableElements.add(toAdd);
+                        }
                         break;
                     case TurkeyRoasting:
-    
+                        String temperature = "";
+                        Element tableHead = table.select("thead").first();
+                        if (tableHead != null) {
+                            temperature = tableHead.select("tr").first().text();
+                        }
+
+                        Element tableBody = table.select("tbody").first();
+                        if (tableBody != null) {
+                            for (Element e : tableBody.children()) {
+                                if (e.select("th").first() != null) {
+                                    Elements attributes = e.select("td");
+                                    Element[] attr = {};
+                                    String size = e.select("th").first().text();
+                                    String unstuffed = attributes.toArray(attr)[0].text();
+                                    String stuffed = attributes.toArray(attr)[1].text();
+                                    TurkeyRoastingWebElement toAdd = new TurkeyRoastingWebElement(
+                                        "Turkey",
+                                        temperature,
+                                        size,
+                                        unstuffed,
+                                        stuffed);
+                                    tableElements.add(toAdd);
+                                }
+                            }
+                        }
                         break;
                     case TurkeyThawing:
-    
+                        String thawingInformation = "";
+                        tableHead = table.select("thead").first();
+                        if (tableHead != null) {
+                            thawingInformation = tableHead.select("tr").first().text();
+                        }
+
+                        tableBody = table.select("tbody").first();
+                        if (tableBody != null) {
+                            for (Element e : tableBody.children()) {
+                                if (e.select("th").first() != null) {
+                                    Elements attributes = e.select("td");
+                                    Element[] attr = {};
+                                    String turkeySizeInformation = e.select("th").first().text();
+                                    String thawInRefrigeratorInformation = attributes.toArray(attr)[0].text();
+                                    String thawInColdWaterInformation = attributes.toArray(attr)[1].text();
+                                    TurkeyThawingWebElement toAdd = new TurkeyThawingWebElement(
+                                        thawingInformation,
+                                        turkeySizeInformation,
+                                        thawInRefrigeratorInformation,
+                                        thawInColdWaterInformation);
+                                    tableElements.add(toAdd);
+                                }
+                            }
+                        }
                         break;
                     default:
                         break;
