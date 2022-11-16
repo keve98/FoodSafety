@@ -1,6 +1,6 @@
 package com.example.FoodSafety.ServiceModels;
 
-public class ColdFoodStorageWebElement {
+public class ColdFoodStorageWebElement extends FoodSafetyWebElement {
     private String FoodCategoryName;
     private String FoodTypes;
     private String RefrigeratorInformation;
@@ -37,5 +37,6 @@ public class ColdFoodStorageWebElement {
         FoodTypes = foodTypes;
         RefrigeratorInformation = refrigeratorInformation;
         FreezerInformation = freezerInformation;
+        Type = FoodSafetyType.ColdFoodStorage;
     }
 }
