@@ -1,18 +1,23 @@
+package com.example.FoodSafety.Web;
+
 import com.example.FoodSafety.DataModels.*;
 import com.example.FoodSafety.DataRepositories.*;
 import com.example.FoodSafety.DataServices.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
 import javax.faces.bean.ManagedBean;
-import javax.faces.bean.SessionScoped;
+import javax.faces.bean.ManagedProperty;
+
+import javax.faces.view.ViewScoped;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
 @Component
-@ManagedBean(name = "JSFData", eager = true)
-@SessionScoped
+@ManagedBean(name = "com.example.FoodSafety.Web.JSFData", eager = true)
+@ViewScoped
 public class JSFData implements Serializable {
 
     private final ColdFoodStorageRepository coldFoodStorageRepository;

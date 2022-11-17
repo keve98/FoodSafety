@@ -35,6 +35,8 @@ public class FoodSafetyApplication {
 		TurkeyThawingService turkeyThawingService = applicationContext.getBean(TurkeyThawingService.class);
 		SafeTemperatureCookingService safeTemperatureCookingService = applicationContext.getBean(SafeTemperatureCookingService.class);
 
+
+
 		WebReaderService wrs = new WebReaderService();
 		List<FoodSafetyWebElement> parsedColdFoodStorage = wrs
 		.CreateListFromTable(wrs
