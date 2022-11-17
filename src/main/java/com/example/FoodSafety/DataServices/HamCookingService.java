@@ -30,9 +30,19 @@ public class HamCookingService {
     public HamCooking newHamCooking(HamCooking HamCooking){
         HamCooking tmp = new HamCooking();
         tmp = HamCooking;
+        tmp.setFoodCategory(tmp.getFoodCategory().toLowerCase());
+        tmp.setFoodType(tmp.getFoodType().toLowerCase());
+        tmp.setCookingInformation(tmp.getCookingInformation().toLowerCase());
+        tmp.setTimingInformation(tmp.getTimingInformation().toLowerCase());
+        tmp.setWeightInformation(tmp.getWeightInformation().toLowerCase());
         tmp.setId(null);
         return hamCookingRepository.save(tmp);
     }
+
+    public List<HamCooking> findByCategoryAndType(String type, String category){
+        return hamCookingRepository.searchHamCookingByFoodTypeAndFoodCategory(type, category);
+    }
+
 
 
 }

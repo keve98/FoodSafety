@@ -8,7 +8,7 @@ public class TurkeyThawing {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-
+    private String FoodCategory = "Turkey";
 
     private String ThawingInformation;
 
@@ -65,5 +65,13 @@ public class TurkeyThawing {
 
     public void setThawInColdWaterInformation(String thawInColdWaterInformation) {
         ThawInColdWaterInformation = thawInColdWaterInformation;
+    }
+
+    public void setFoodCategory(String foodCategory) {
+        FoodCategory = foodCategory;
+    }
+
+    public String getFoodCategory() {
+        return FoodCategory;
     }
 }

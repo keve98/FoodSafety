@@ -32,7 +32,15 @@ public class ColdFoodStorageService {
         ColdFoodStorage tmp = new ColdFoodStorage();
         tmp = coldFoodStorage;
         tmp.setId(null);
+        tmp.setFoodType(tmp.getFoodType().toLowerCase());
+        tmp.setFoodCategory(tmp.getFoodCategory().toLowerCase());
+        tmp.setFreezerInformation(tmp.getFreezerInformation().toLowerCase());
+        tmp.setRefrigeratorInformation(tmp.getRefrigeratorInformation().toLowerCase());
         return coldFoodStorageRepository.save(tmp);
+    }
+
+    public List<ColdFoodStorage> findByCategoryAndType(String type, String category){
+        return coldFoodStorageRepository.searchColdFoodStorageByFoodTypeAndFoodCategory(type, category);
     }
 
 }

@@ -105,6 +105,7 @@ public class FoodSafetyApplication {
 			}
 		}
 
+
 		if (parsedFoodSafetyPowerOutage != null) {
 			for(FoodSafetyWebElement foodSafetyPowerOutageWebElement : parsedFoodSafetyPowerOutage) {
 				if (foodSafetyPowerOutageWebElement.getType() == FoodSafetyType.FoodSafetyPowerOutage) {

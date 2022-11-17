@@ -31,9 +31,18 @@ public class PoultryRoastingService {
     public PoultryRoasting newPoultryRoasting(PoultryRoasting poultryRoasting){
         PoultryRoasting tmp = new PoultryRoasting();
         tmp = poultryRoasting;
+        tmp.setFoodCategory(tmp.getFoodCategory().toLowerCase());
+        tmp.setFoodType(tmp.getFoodType().toLowerCase());
+        tmp.setTimingInformation(tmp.getTimingInformation().toLowerCase());
+        tmp.setOvenTemperatureInFInformation(tmp.getOvenTemperatureInFInformation().toLowerCase());
         tmp.setId(null);
         return poultryRoastingRepository.save(tmp);
     }
+
+    public List<PoultryRoasting> findByCategoryAndType(String type, String category){
+        return poultryRoastingRepository.searchPoultryRoastingByFoodTypeAndFoodCategory(type, category);
+    }
+
 
 
 }

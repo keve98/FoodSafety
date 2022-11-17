@@ -30,9 +30,19 @@ public class TurkeyRoastingService {
     public TurkeyRoasting newTurkeyRoast(TurkeyRoasting turkeyRoasting){
         TurkeyRoasting tmp = new TurkeyRoasting();
         tmp = turkeyRoasting;
+        tmp.setFoodCategory(tmp.getFoodCategory().toLowerCase());
+        tmp.setRoastingInformation(tmp.getRoastingInformation().toLowerCase());
+        tmp.setTurkeySizeInformation(tmp.getTurkeySizeInformation().toLowerCase());
+        tmp.setTurkeyStuffedInformation(tmp.getTurkeyStuffedInformation().toLowerCase());
+        tmp.setTurkeyUnstuffedInformation(tmp.getTurkeyUnstuffedInformation().toLowerCase());
         tmp.setId(null);
         return turkeyRoastingRepository.save(tmp);
     }
+
+    public List<TurkeyRoasting> findByCategoryAndType(String category){
+        return turkeyRoastingRepository.searchTurkeyRoastingByFoodTypeAndFoodCategory(category);
+    }
+
 
 
 }

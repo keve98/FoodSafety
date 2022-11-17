@@ -30,9 +30,18 @@ public class MeatRoastingService {
     public MeatRoasting newMeatRoasting(MeatRoasting meatRoasting){
         MeatRoasting tmp = new MeatRoasting();
         tmp = meatRoasting;
+        tmp.setFoodCategory(tmp.getFoodCategory().toLowerCase());
+        tmp.setFoodType(tmp.getFoodType().toLowerCase());
+        tmp.setTimingInformation(tmp.getTimingInformation().toLowerCase());
+        tmp.setOvenTemperatureInFInformation(tmp.getOvenTemperatureInFInformation().toLowerCase());
         tmp.setId(null);
         return meatRoastingRepository.save(tmp);
     }
+
+    public List<MeatRoasting> findByCategoryAndType(String type, String category){
+        return meatRoastingRepository.searchMeatRoastingByFoodTypeAndFoodCategory(type, category);
+    }
+
 
 
 

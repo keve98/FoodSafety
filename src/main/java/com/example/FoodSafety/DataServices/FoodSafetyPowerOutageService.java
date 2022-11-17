@@ -31,8 +31,16 @@ public class FoodSafetyPowerOutageService {
     public FoodSafetyPowerOutage newFoodSafetyPowerOutage(FoodSafetyPowerOutage FoodSafetyPowerOutage){
         FoodSafetyPowerOutage tmp = new FoodSafetyPowerOutage();
         tmp = FoodSafetyPowerOutage;
+        tmp.setFoodCategory(tmp.getFoodCategory().toLowerCase());
+        tmp.setFoodType(tmp.getFoodType().toLowerCase());
+        tmp.setHeldAboveFourtyOverTwoHoursInformation(tmp.getHeldAboveFourtyOverTwoHoursInformation().toLowerCase());
         tmp.setId(null);
         return foodSafetyPowerOutageRepository.save(tmp);
     }
+
+    public List<FoodSafetyPowerOutage> findByCategoryAndType(String type, String category){
+        return foodSafetyPowerOutageRepository.searchFoodSafetyPowerOutageByFoodTypeAndFoodCategory(type, category);
+    }
+
 
 }
