@@ -7,6 +7,7 @@ import com.example.FoodSafety.Exceptions.NotFoundEntityException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -43,4 +44,7 @@ public class ColdFoodStorageService {
         return coldFoodStorageRepository.searchColdFoodStorageByFoodTypeAndFoodCategory(type, category);
     }
 
+    public List<ColdFoodStorage> findByInformation(String inf) {
+        return coldFoodStorageRepository.searchColdFoodStorageByInformation(inf);
+    }
 }

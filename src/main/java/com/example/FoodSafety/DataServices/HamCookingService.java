@@ -43,6 +43,7 @@ public class HamCookingService {
         return hamCookingRepository.searchHamCookingByFoodTypeAndFoodCategory(type, category);
     }
 
-
-
+    public List<HamCooking> findByInformation(String inf) {
+        return hamCookingRepository.searchHamCookingByInformation(inf);
+    }
 }

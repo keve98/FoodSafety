@@ -5,10 +5,8 @@ import com.example.FoodSafety.DataRepositories.*;
 import com.example.FoodSafety.DataServices.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-import org.springframework.stereotype.Service;
 
 import javax.faces.bean.ManagedBean;
-import javax.faces.bean.ManagedProperty;
 
 import javax.faces.view.ViewScoped;
 import java.io.Serializable;
@@ -50,6 +48,8 @@ public class JSFData implements Serializable {
 
     public String foodType = "";
 
+    public String information = "";
+
     @Autowired
     public JSFData(ColdFoodStorageRepository coldFoodStorageRepository, FoodSafetyPowerOutageRepository foodSafetyPowerOutageRepository, HamCookingRepository hamCookingRepository, MeatRoastingRepository meatRoastingRepository, PoultryRoastingRepository poultryRoastingRepository, SafeTemperatureCookingRepository safeTemperatureCookingRepository, TurkeyRoastingRepository turkeyRoastingRepository, TurkeyThawingRepository turkeyThawingRepository) {
         this.coldFoodStorageRepository = coldFoodStorageRepository;
@@ -84,6 +84,17 @@ public class JSFData implements Serializable {
 
     }
 
+    public void getDataByInformation() {
+        coldFoodStorages = coldFoodStorageService.findByInformation(this.information);
+        foodSafetyPowerOutages = foodSafetyPowerOutageService.findByInformation(this.information);
+        hamCookings = hamCookingService.findByInformation(this.information);
+        meatRoastings = meatRoastingService.findByInformation(this.information);
+        poultryRoastings = poultryRoastingService.findByInformation(this.information);
+        safeTemperatureCookings = safeTemperatureCookingService.findByInformation(this.information);
+        turkeyRoastings = turkeyRoastingService.findByInformation(this.information);
+        turkeyThawings = turkeyThawingService.findByInformation(this.information);
+    }
+
     public String getFoodCategory() {
         return foodCategory;
     }
@@ -98,5 +109,13 @@ public class JSFData implements Serializable {
 
     public void setFoodType(String foodName) {
         this.foodType = foodName;
+    }
+
+    public String getInformation() {
+        return information;
+    }
+
+    public void setInformation(String information) {
+        this.information = information;
     }
 }

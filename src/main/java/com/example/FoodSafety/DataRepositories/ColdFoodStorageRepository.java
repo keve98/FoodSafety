@@ -12,4 +12,6 @@ public interface ColdFoodStorageRepository extends JpaRepository<ColdFoodStorage
     @Query(value = "select c from ColdFoodStorage c where c.FoodCategory like %:category% and c.FoodType like %:type%")
     List<ColdFoodStorage> searchColdFoodStorageByFoodTypeAndFoodCategory(@Param("type") String type, @Param("category") String category);
 
+    @Query(value = "select c from ColdFoodStorage c where c.FoodCategory like %:inf% or c.FoodType like %:inf% or c.RefrigeratorInformation like %:inf% or c.FreezerInformation like %:inf%")
+    List<ColdFoodStorage> searchColdFoodStorageByInformation(@Param("inf") String inf);
 }

@@ -41,6 +41,7 @@ public class SafeTemperatureCookingService {
         return safeTemperatureCookingRepository.searchSafeTemperatureCookingByFoodTypeAndFoodCategory(type, category);
     }
 
-
-
+    public List<SafeTemperatureCooking> findByInformation(String inf) {
+        return safeTemperatureCookingRepository.searchSafeTemperatureCookingByInformation(inf);
+    }
 }

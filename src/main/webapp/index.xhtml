@@ -13,7 +13,10 @@
         <h:inputText value="#{JSFData.foodCategory}"/>
         <h3>Food Name:</h3>
         <h:inputText value="#{JSFData.foodType}"/>
-        <h:commandButton value="Search" id="search" action="#{JSFData.getDataByFoodAndCategory()}"/>
+        <h:commandButton value="Search by category and name" id="search_cat_type" action="#{JSFData.getDataByFoodAndCategory()}"/>
+        <h3>Food information</h3>
+        <h:inputText value="#{JSFData.information}"/>
+        <h:commandButton value="Search by information" id="search_inf" action="#{JSFData.getDataByInformation()}"/>
     </h:form>
 </h:body>
 </html>

@@ -42,5 +42,7 @@ public class FoodSafetyPowerOutageService {
         return foodSafetyPowerOutageRepository.searchFoodSafetyPowerOutageByFoodTypeAndFoodCategory(type, category);
     }
 
-
+    public List<FoodSafetyPowerOutage> findByInformation(String inf) {
+        return foodSafetyPowerOutageRepository.searchFoodSafetyPowerOutageByInformation(inf);
+    }
 }

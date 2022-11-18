@@ -42,7 +42,7 @@ public class MeatRoastingService {
         return meatRoastingRepository.searchMeatRoastingByFoodTypeAndFoodCategory(type, category);
     }
 
-
-
-
+    public List<MeatRoasting> findByInformation(String inf) {
+        return meatRoastingRepository.searchMeatRoastingByInformation(inf);
+    }
 }

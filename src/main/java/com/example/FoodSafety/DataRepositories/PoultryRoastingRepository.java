@@ -12,5 +12,6 @@ public interface PoultryRoastingRepository extends JpaRepository<PoultryRoasting
     @Query(value = "select p from PoultryRoasting p where p.FoodCategory like %:category% and p.FoodType like %:type%")
     List<PoultryRoasting> searchPoultryRoastingByFoodTypeAndFoodCategory(@Param("type") String type, @Param("category") String category);
 
-
+    @Query(value = "select p from PoultryRoasting p where p.FoodCategory like %:inf% or p.FoodType like %:inf% or p.OvenTemperatureInFInformation like %:inf% or p.TimingInformation like %:inf%")
+    List<PoultryRoasting> searchPoultryRoastingByInformation(@Param("inf") String inf);
 }

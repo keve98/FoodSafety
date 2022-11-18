@@ -43,6 +43,7 @@ public class PoultryRoastingService {
         return poultryRoastingRepository.searchPoultryRoastingByFoodTypeAndFoodCategory(type, category);
     }
 
-
-
+    public List<PoultryRoasting> findByInformation(String inf) {
+        return poultryRoastingRepository.searchPoultryRoastingByInformation(inf);
+    }
 }

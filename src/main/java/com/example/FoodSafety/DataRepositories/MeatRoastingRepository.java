@@ -12,5 +12,6 @@ public interface MeatRoastingRepository extends JpaRepository<MeatRoasting, Long
     @Query(value = "select m from MeatRoasting m where m.FoodCategory like %:category% and m.FoodType like %:type%")
     List<MeatRoasting> searchMeatRoastingByFoodTypeAndFoodCategory(@Param("type") String type, @Param("category") String category);
 
-
+    @Query(value = "select m from MeatRoasting m where m.FoodCategory like %:inf% or m.FoodType like %:inf% or m.OvenTemperatureInFInformation like %:inf% or m.TimingInformation like %:inf%")
+    List<MeatRoasting> searchMeatRoastingByInformation(@Param("inf") String inf);
 }

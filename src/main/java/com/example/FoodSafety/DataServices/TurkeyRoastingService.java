@@ -43,6 +43,7 @@ public class TurkeyRoastingService {
         return turkeyRoastingRepository.searchTurkeyRoastingByFoodTypeAndFoodCategory(category);
     }
 
-
-
+    public List<TurkeyRoasting> findByInformation(String inf) {
+        return turkeyRoastingRepository.searchTurkeyRoastingByInformation(inf);
+    }
 }
