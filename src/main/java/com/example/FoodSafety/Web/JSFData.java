@@ -69,7 +69,6 @@ public class JSFData implements Serializable {
         this.safeTemperatureCookingService = new SafeTemperatureCookingService(this.safeTemperatureCookingRepository);
         this.turkeyRoastingService = new TurkeyRoastingService(this.turkeyRoastingRepository);
         this.turkeyThawingService = new TurkeyThawingService(this.turkeyThawingRepository);
-
     }
 
     public void getDataByFoodAndCategory(){
@@ -81,7 +80,6 @@ public class JSFData implements Serializable {
         safeTemperatureCookings = safeTemperatureCookingService.findByCategoryAndType(this.foodType, this.foodCategory);
         turkeyRoastings = turkeyRoastingService.findByCategoryAndType(this.foodCategory);
         turkeyThawings = turkeyThawingService.findByCategoryAndType(this.foodCategory);
-
     }
 
     public void getDataByInformation() {
@@ -117,5 +115,13 @@ public class JSFData implements Serializable {
 
     public void setInformation(String information) {
         this.information = information;
+    }
+
+    public List<ColdFoodStorage> getColdFoodStorages() {
+        return coldFoodStorages;
+    }
+
+    public void setColdFoodStorages(List<ColdFoodStorage> coldFoodStorages) {
+        this.coldFoodStorages = coldFoodStorages;
     }
 }
