@@ -2,26 +2,32 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:f="http://java.sun.com/jsf/core"
-      xmlns:c="http://java.sun.com/">
-<h:head>
+      >
+<head>
+    <link rel="stylesheet" href="styles.css"/>
+</head>
 
-</h:head>
 
-<h:body>
+<h:body styleClass="body">
+
 <h2> Welcome in Food Safety!</h2>
 <hr />
     <h:form>
+        <div>
         <h3>Food Category:</h3>
         <h:inputText value="#{JSFData.foodCategory}"/>
         <h3>Food Name:</h3>
         <h:inputText value="#{JSFData.foodType}"/>
         <h:commandButton value="Search by category and name" id="search_cat_type" action="#{JSFData.getDataByFoodAndCategory()}"/>
-        <h3>Food information</h3>
+        </div>
+        <h3>Food information:</h3>
         <h:inputText value="#{JSFData.information}"/>
         <h:commandButton value="Search by information" id="search_inf" action="#{JSFData.getDataByInformation()}"/>
+        <hr />
 
-        <h3>Cold Food Storage</h3>
-        <h:dataTable id="table_cold_food_storage" var="ColdFoodStorage" value="#{JSFData.coldFoodStorages}">
+        <h4>Cold Food Storage</h4>
+        <h:dataTable id="table_cold_food_storage" var="ColdFoodStorage" value="#{JSFData.coldFoodStorages}"
+                     styleClass="table">
             <h:column>
                 <f:facet name="header">Food Category</f:facet>
                 <h:outputText value="#{ColdFoodStorage.foodCategory}" />
