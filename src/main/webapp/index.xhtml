@@ -45,6 +45,157 @@
                 <h:outputText value="#{ColdFoodStorage.freezerInformation}" />
             </h:column>
         </h:dataTable>
+
+        <h4>Food Safety Power Outage</h4>
+        <h:dataTable id="table_power_outage" var="FoodSafetyPowerOutage" value="#{JSFData.foodSafetyPowerOutages}"
+                     styleClass="table">
+            <h:column>
+                <f:facet name="header">Food Category</f:facet>
+                <h:outputText value="#{FoodSafetyPowerOutage.foodCategory}" />
+            </h:column>
+            <h:column>
+                <f:facet name="header">Food Type</f:facet>
+                <h:outputText value="#{FoodSafetyPowerOutage.foodType}" />
+            </h:column>
+            <h:column>
+                <f:facet name="header">Held Above Fourty Over Two Hours Information</f:facet>
+                <h:outputText value="#{FoodSafetyPowerOutage.heldAboveFourtyOverTwoHoursInformation}" />
+            </h:column>
+        </h:dataTable>
+
+        <h4>Ham Cooking</h4>
+        <h:dataTable id="table_ham_cooking" var="HamCooking" value="#{JSFData.hamCookings}"
+                     styleClass="table">
+            <h:column>
+                <f:facet name="header">Food Category</f:facet>
+                <h:outputText value="#{HamCooking.foodCategory}" />
+            </h:column>
+            <h:column>
+                <f:facet name="header">Food Type</f:facet>
+                <h:outputText value="#{HamCooking.foodType}" />
+            </h:column>
+            <h:column>
+                <f:facet name="header">Cooking Information</f:facet>
+                <h:outputText value="#{HamCooking.cookingInformation}" />
+            </h:column>
+            <h:column>
+                <f:facet name="header">Weight Information</f:facet>
+                <h:outputText value="#{HamCooking.weightInformation}" />
+            </h:column>
+            <h:column>
+                <f:facet name="header">Timing Information</f:facet>
+                <h:outputText value="#{HamCooking.timingInformation}" />
+            </h:column>
+        </h:dataTable>
+
+        <h4>Meat Roasting</h4>
+        <h:dataTable id="table_meat_roasting" var="MeatRoasting" value="#{JSFData.meatRoastings}"
+                     styleClass="table">
+            <h:column>
+                <f:facet name="header">Food Category</f:facet>
+                <h:outputText value="#{MeatRoasting.foodCategory}" />
+            </h:column>
+            <h:column>
+                <f:facet name="header">Food Type</f:facet>
+                <h:outputText value="#{MeatRoasting.foodType}" />
+            </h:column>
+            <h:column>
+                <f:facet name="header">Oven Temperature Information</f:facet>
+                <h:outputText value="#{MeatRoasting.ovenTemperatureInFInformation}" />
+            </h:column>
+            <h:column>
+                <f:facet name="header">Timing Information</f:facet>
+                <h:outputText value="#{MeatRoasting.timingInformation}" />
+            </h:column>
+        </h:dataTable>
+
+        <h4>Poultry Roasting</h4>
+        <h:dataTable id="table_poultry_roasting" var="PoultryRoasting" value="#{JSFData.poultryRoastings}"
+                     styleClass="table">
+            <h:column>
+                <f:facet name="header">Food Category</f:facet>
+                <h:outputText value="#{PoultryRoasting.foodCategory}" />
+            </h:column>
+            <h:column>
+                <f:facet name="header">Food Type</f:facet>
+                <h:outputText value="#{PoultryRoasting.foodType}" />
+            </h:column>
+            <h:column>
+                <f:facet name="header">Oven Temperature Information</f:facet>
+                <h:outputText value="#{PoultryRoasting.ovenTemperatureInFInformation}" />
+            </h:column>
+            <h:column>
+                <f:facet name="header">Timing Information</f:facet>
+                <h:outputText value="#{PoultryRoasting.timingInformation}" />
+            </h:column>
+        </h:dataTable>
+
+        <h4>Safe Temperature Cooking</h4>
+        <h:dataTable id="table_safe_temperature_cooking" var="SafeTemperatureCooking" value="#{JSFData.safeTemperatureCookings}"
+                     styleClass="table">
+            <h:column>
+                <f:facet name="header">Food Category</f:facet>
+                <h:outputText value="#{SafeTemperatureCooking.foodCategory}" />
+            </h:column>
+            <h:column>
+                <f:facet name="header">Food Type</f:facet>
+                <h:outputText value="#{SafeTemperatureCooking.foodType}" />
+            </h:column>
+            <h:column>
+                <f:facet name="header">Internal Temperature Information</f:facet>
+                <h:outputText value="#{SafeTemperatureCooking.internalTemperatureInformation}" />
+            </h:column>
+        </h:dataTable>
+
+        <h4>Turkey Roasting</h4>
+        <h:dataTable id="table_turkey_roasting" var="TurkeyRoasting" value="#{JSFData.turkeyRoastings}"
+                     styleClass="table">
+            <h:column>
+                <f:facet name="header">Food Category</f:facet>
+                <h:outputText value="#{TurkeyRoasting.foodCategory}" />
+            </h:column>
+            <h:column>
+                <f:facet name="header">Roasting Information</f:facet>
+                <h:outputText value="#{TurkeyRoasting.roastingInformation}" />
+            </h:column>
+            <h:column>
+                <f:facet name="header">Turkey Size Information</f:facet>
+                <h:outputText value="#{TurkeyRoasting.turkeySizeInformation}" />
+            </h:column>
+            <h:column>
+                <f:facet name="header">Turkey Unstuffed Information</f:facet>
+                <h:outputText value="#{TurkeyRoasting.turkeyUnstuffedInformation}" />
+            </h:column>
+            <h:column>
+                <f:facet name="header">Turkey Stuffed Information</f:facet>
+                <h:outputText value="#{TurkeyRoasting.turkeyStuffedInformation}" />
+            </h:column>
+        </h:dataTable>
+
+        <h4>Turkey Thawing</h4>
+        <h:dataTable id="table_turkey_thawing" var="TurkeyThawing" value="#{JSFData.turkeyThawings}"
+                     styleClass="table">
+            <h:column>
+                <f:facet name="header">Food Category</f:facet>
+                <h:outputText value="#{TurkeyThawing.foodCategory}" />
+            </h:column>
+            <h:column>
+                <f:facet name="header">Thawing Information</f:facet>
+                <h:outputText value="#{TurkeyThawing.thawingInformation}" />
+            </h:column>
+            <h:column>
+                <f:facet name="header">Turkey Size Information</f:facet>
+                <h:outputText value="#{TurkeyThawing.turkeySizeInformation}" />
+            </h:column>
+            <h:column>
+                <f:facet name="header">Thaw In Refrigerator Information</f:facet>
+                <h:outputText value="#{TurkeyThawing.thawInRefrigeratorInformation}" />
+            </h:column>
+            <h:column>
+                <f:facet name="header">Thaw In Cold Water Information</f:facet>
+                <h:outputText value="#{TurkeyThawing.thawInColdWaterInformation}" />
+            </h:column>
+        </h:dataTable>
     </h:form>
 </h:body>
 </html>

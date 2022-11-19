@@ -72,6 +72,14 @@ public class JSFData implements Serializable {
     }
 
     public void getDataByFoodAndCategory(){
+        coldFoodStorages.clear();
+        foodSafetyPowerOutages.clear();
+        hamCookings.clear();
+        meatRoastings.clear();
+        poultryRoastings.clear();
+        safeTemperatureCookings.clear();
+        turkeyRoastings.clear();
+        turkeyThawings.clear();
         coldFoodStorages = coldFoodStorageService.findByCategoryAndType(this.foodType, this.foodCategory);
         foodSafetyPowerOutages = foodSafetyPowerOutageService.findByCategoryAndType(this.foodType, this.foodCategory);
         hamCookings = hamCookingService.findByCategoryAndType(this.foodType, this.foodCategory);
@@ -83,6 +91,14 @@ public class JSFData implements Serializable {
     }
 
     public void getDataByInformation() {
+        coldFoodStorages.clear();
+        foodSafetyPowerOutages.clear();
+        hamCookings.clear();
+        meatRoastings.clear();
+        poultryRoastings.clear();
+        safeTemperatureCookings.clear();
+        turkeyRoastings.clear();
+        turkeyThawings.clear();
         coldFoodStorages = coldFoodStorageService.findByInformation(this.information);
         foodSafetyPowerOutages = foodSafetyPowerOutageService.findByInformation(this.information);
         hamCookings = hamCookingService.findByInformation(this.information);
@@ -123,5 +139,61 @@ public class JSFData implements Serializable {
 
     public void setColdFoodStorages(List<ColdFoodStorage> coldFoodStorages) {
         this.coldFoodStorages = coldFoodStorages;
+    }
+
+    public List<FoodSafetyPowerOutage> getFoodSafetyPowerOutages() {
+        return foodSafetyPowerOutages;
+    }
+
+    public void setFoodSafetyPowerOutages(List<FoodSafetyPowerOutage> foodSafetyPowerOutages) {
+        this.foodSafetyPowerOutages = foodSafetyPowerOutages;
+    }
+
+    public List<HamCooking> getHamCookings() {
+        return hamCookings;
+    }
+
+    public void setHamCookings(List<HamCooking> hamCookings) {
+        this.hamCookings = hamCookings;
+    }
+
+    public List<MeatRoasting> getMeatRoastings() {
+        return meatRoastings;
+    }
+    
+    public void setMeatRoastings(List<MeatRoasting> meatRoastings) {
+        this.meatRoastings = meatRoastings;
+    }
+
+    public List<PoultryRoasting> getPoultryRoastings() {
+        return poultryRoastings;
+    }
+
+    public void setPoultryRoastings(List<PoultryRoasting> poultryRoastings) {
+        this.poultryRoastings = poultryRoastings;
+    }
+
+    public List<SafeTemperatureCooking> getSafeTemperatureCookings() {
+        return safeTemperatureCookings;
+    }
+
+    public void setSafeTemperatureCookings(List<SafeTemperatureCooking> safeTemperatureCookings) {
+        this.safeTemperatureCookings = safeTemperatureCookings;
+    }
+
+    public List<TurkeyRoasting> getTurkeyRoastings() {
+        return turkeyRoastings;
+    }
+
+    public void setTurkeyRoastings(List<TurkeyRoasting> turkeyRoastings) {
+        this.turkeyRoastings = turkeyRoastings;
+    }
+    
+    public List<TurkeyThawing> getTurkeyThawings() {
+        return turkeyThawings;
+    }
+
+    public void setTurkeyThawings(List<TurkeyThawing> turkeyThawings) {
+        this.turkeyThawings = turkeyThawings;
     }
 }
