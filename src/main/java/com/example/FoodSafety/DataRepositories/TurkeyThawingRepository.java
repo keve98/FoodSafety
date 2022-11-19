@@ -10,7 +10,7 @@ import java.util.List;
 public interface TurkeyThawingRepository extends JpaRepository<TurkeyThawing, Long> {
 
     @Query(value = "select s from TurkeyThawing s where s.FoodCategory like %:category%")
-    List<TurkeyThawing> searchTurkeyThawingByFoodTypeAndFoodCategory(@Param("category") String category);
+    List<TurkeyThawing> searchTurkeyThawingByFoodCategory(@Param("category") String category);
 
     @Query(value = "select s from TurkeyThawing s where s.FoodCategory like %:inf% or s.ThawingInformation like %:inf% or s.TurkeySizeInformation like %:inf% or s.ThawInRefrigeratorInformation like %:inf% or s.ThawInColdWaterInformation like %:inf%")
     List<TurkeyThawing> searchTurkeyThawingByInformation(@Param("inf") String inf);

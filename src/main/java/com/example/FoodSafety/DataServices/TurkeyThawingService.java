@@ -40,7 +40,7 @@ public class TurkeyThawingService {
     }
 
     public List<TurkeyThawing> findByCategoryAndType(String category){
-        return turkeyThawingRepository.searchTurkeyThawingByFoodTypeAndFoodCategory(category);
+        return turkeyThawingRepository.searchTurkeyThawingByFoodCategory(category);
     }
 
     public List<TurkeyThawing> findByInformation(String inf) {

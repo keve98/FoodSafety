@@ -40,7 +40,7 @@ public class TurkeyRoastingService {
     }
 
     public List<TurkeyRoasting> findByCategoryAndType(String category){
-        return turkeyRoastingRepository.searchTurkeyRoastingByFoodTypeAndFoodCategory(category);
+        return turkeyRoastingRepository.searchTurkeyRoastingByFoodCategory(category);
     }
 
     public List<TurkeyRoasting> findByInformation(String inf) {

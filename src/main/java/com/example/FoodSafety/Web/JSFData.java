@@ -48,14 +48,14 @@ public class JSFData implements Serializable {
     public String foodType = "";
     public String information = "";
 
-    public String coldFoodStorageVisibility = "hidden";
-    public String foodSafetyPowerOutageVisibility = "hidden";
-    public String hamCookingVisibility = "hidden";
-    public String meatRoastingVisibility = "hidden";
-    public String poultryRoastingVisibility = "hidden";
-    public String safeTemperatureCookingVisibility = "hidden";
-    public String turkeyRoastingVisibility = "hidden";
-    public String turkeyThawingVisibility = "hidden";
+    public String coldFoodStorageVisibility = "collapse";
+    public String foodSafetyPowerOutageVisibility = "collapse";
+    public String hamCookingVisibility = "collapse";
+    public String meatRoastingVisibility = "collapse";
+    public String poultryRoastingVisibility = "collapse";
+    public String safeTemperatureCookingVisibility = "collapse";
+    public String turkeyRoastingVisibility = "collapse";
+    public String turkeyThawingVisibility = "collapse";
 
     @Autowired
     public JSFData(ColdFoodStorageRepository coldFoodStorageRepository, FoodSafetyPowerOutageRepository foodSafetyPowerOutageRepository, HamCookingRepository hamCookingRepository, MeatRoastingRepository meatRoastingRepository, PoultryRoastingRepository poultryRoastingRepository, SafeTemperatureCookingRepository safeTemperatureCookingRepository, TurkeyRoastingRepository turkeyRoastingRepository, TurkeyThawingRepository turkeyThawingRepository) {
@@ -95,14 +95,14 @@ public class JSFData implements Serializable {
         safeTemperatureCookings = safeTemperatureCookingService.findByCategoryAndType(this.foodType, this.foodCategory);
         turkeyRoastings = turkeyRoastingService.findByCategoryAndType(this.foodCategory);
         turkeyThawings = turkeyThawingService.findByCategoryAndType(this.foodCategory);
-        coldFoodStorageVisibility = coldFoodStorages != null && coldFoodStorages.size() > 0 ? "visisble" : "hidden";
-        foodSafetyPowerOutageVisibility = foodSafetyPowerOutages != null && foodSafetyPowerOutages.size() > 0 ? "visisble" : "hidden";
-        hamCookingVisibility = hamCookings != null && hamCookings.size() > 0 ? "visisble" : "hidden";
-        meatRoastingVisibility = meatRoastings != null && meatRoastings.size() > 0 ? "visisble" : "hidden";
-        poultryRoastingVisibility = poultryRoastings != null && poultryRoastings.size() > 0 ? "visisble" : "hidden";
-        safeTemperatureCookingVisibility = safeTemperatureCookings != null && safeTemperatureCookings.size() > 0 ? "visisble" : "hidden";
-        turkeyRoastingVisibility = turkeyRoastings != null && turkeyRoastings.size() > 0 ? "visisble" : "hidden";
-        turkeyThawingVisibility = turkeyThawings != null && turkeyThawings.size() > 0 ? "visisble" : "hidden";
+        coldFoodStorageVisibility = coldFoodStorages != null && coldFoodStorages.size() > 0 ? "visisble" : "collapse";
+        foodSafetyPowerOutageVisibility = foodSafetyPowerOutages != null && foodSafetyPowerOutages.size() > 0 ? "visisble" : "collapse";
+        hamCookingVisibility = hamCookings != null && hamCookings.size() > 0 ? "visisble" : "collapse";
+        meatRoastingVisibility = meatRoastings != null && meatRoastings.size() > 0 ? "visisble" : "collapse";
+        poultryRoastingVisibility = poultryRoastings != null && poultryRoastings.size() > 0 ? "visisble" : "collapse";
+        safeTemperatureCookingVisibility = safeTemperatureCookings != null && safeTemperatureCookings.size() > 0 ? "visisble" : "collapse";
+        turkeyRoastingVisibility = turkeyRoastings != null && turkeyRoastings.size() > 0 ? "visisble" : "collapse";
+        turkeyThawingVisibility = turkeyThawings != null && turkeyThawings.size() > 0 ? "visisble" : "collapse";
     }
 
     public void getDataByInformation() {
@@ -122,14 +122,14 @@ public class JSFData implements Serializable {
         safeTemperatureCookings = safeTemperatureCookingService.findByInformation(this.information);
         turkeyRoastings = turkeyRoastingService.findByInformation(this.information);
         turkeyThawings = turkeyThawingService.findByInformation(this.information);
-        coldFoodStorageVisibility = coldFoodStorages != null && coldFoodStorages.size() > 0 ? "visisble" : "hidden";
-        foodSafetyPowerOutageVisibility = foodSafetyPowerOutages != null && foodSafetyPowerOutages.size() > 0 ? "visisble" : "hidden";
-        hamCookingVisibility = hamCookings != null && hamCookings.size() > 0 ? "visisble" : "hidden";
-        meatRoastingVisibility = meatRoastings != null && meatRoastings.size() > 0 ? "visisble" : "hidden";
-        poultryRoastingVisibility = poultryRoastings != null && poultryRoastings.size() > 0 ? "visisble" : "hidden";
-        safeTemperatureCookingVisibility = safeTemperatureCookings != null && safeTemperatureCookings.size() > 0 ? "visisble" : "hidden";
-        turkeyRoastingVisibility = turkeyRoastings != null && turkeyRoastings.size() > 0 ? "visisble" : "hidden";
-        turkeyThawingVisibility = turkeyThawings != null && turkeyThawings.size() > 0 ? "visisble" : "hidden";
+        coldFoodStorageVisibility = coldFoodStorages != null && coldFoodStorages.size() > 0 ? "visisble" : "collapse";
+        foodSafetyPowerOutageVisibility = foodSafetyPowerOutages != null && foodSafetyPowerOutages.size() > 0 ? "visisble" : "collapse";
+        hamCookingVisibility = hamCookings != null && hamCookings.size() > 0 ? "visisble" : "collapse";
+        meatRoastingVisibility = meatRoastings != null && meatRoastings.size() > 0 ? "visisble" : "collapse";
+        poultryRoastingVisibility = poultryRoastings != null && poultryRoastings.size() > 0 ? "visisble" : "collapse";
+        safeTemperatureCookingVisibility = safeTemperatureCookings != null && safeTemperatureCookings.size() > 0 ? "visisble" : "collapse";
+        turkeyRoastingVisibility = turkeyRoastings != null && turkeyRoastings.size() > 0 ? "visisble" : "collapse";
+        turkeyThawingVisibility = turkeyThawings != null && turkeyThawings.size() > 0 ? "visisble" : "collapse";
     }
 
     public String getFoodCategory() {
