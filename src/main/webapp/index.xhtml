@@ -25,8 +25,8 @@
         <h:commandButton value="Search by information" id="search_inf" action="#{JSFData.getDataByInformation()}"/>
         <hr />
 
-        <h4>Cold Food Storage</h4>
-        <h:dataTable id="table_cold_food_storage" var="ColdFoodStorage" value="#{JSFData.coldFoodStorages}"
+        <h4 style="visibility: #{JSFData.coldFoodStorageVisibility}">Cold Food Storage</h4>
+        <h:dataTable style="visibility: #{JSFData.coldFoodStorageVisibility}" id="table_cold_food_storage" var="ColdFoodStorage" value="#{JSFData.coldFoodStorages}"
                      styleClass="table">
             <h:column>
                 <f:facet name="header">Food Category</f:facet>
@@ -46,8 +46,8 @@
             </h:column>
         </h:dataTable>
 
-        <h4>Food Safety Power Outage</h4>
-        <h:dataTable id="table_power_outage" var="FoodSafetyPowerOutage" value="#{JSFData.foodSafetyPowerOutages}"
+        <h4 style="visibility: #{JSFData.foodSafetyPowerOutageVisibility}">Food Safety Power Outage</h4>
+        <h:dataTable style="visibility: #{JSFData.foodSafetyPowerOutageVisibility}" id="table_power_outage" var="FoodSafetyPowerOutage" value="#{JSFData.foodSafetyPowerOutages}"
                      styleClass="table">
             <h:column>
                 <f:facet name="header">Food Category</f:facet>
@@ -63,8 +63,8 @@
             </h:column>
         </h:dataTable>
 
-        <h4>Ham Cooking</h4>
-        <h:dataTable id="table_ham_cooking" var="HamCooking" value="#{JSFData.hamCookings}"
+        <h4 style="visibility: #{JSFData.hamCookingVisibility}">Ham Cooking</h4>
+        <h:dataTable style="visibility: #{JSFData.hamCookingVisibility}" id="table_ham_cooking" var="HamCooking" value="#{JSFData.hamCookings}"
                      styleClass="table">
             <h:column>
                 <f:facet name="header">Food Category</f:facet>
@@ -88,8 +88,8 @@
             </h:column>
         </h:dataTable>
 
-        <h4>Meat Roasting</h4>
-        <h:dataTable id="table_meat_roasting" var="MeatRoasting" value="#{JSFData.meatRoastings}"
+        <h4 style="visibility: #{JSFData.meatRoastingVisibility}">Meat Roasting</h4>
+        <h:dataTable style="visibility: #{JSFData.meatRoastingVisibility}" id="table_meat_roasting" var="MeatRoasting" value="#{JSFData.meatRoastings}"
                      styleClass="table">
             <h:column>
                 <f:facet name="header">Food Category</f:facet>
@@ -109,8 +109,8 @@
             </h:column>
         </h:dataTable>
 
-        <h4>Poultry Roasting</h4>
-        <h:dataTable id="table_poultry_roasting" var="PoultryRoasting" value="#{JSFData.poultryRoastings}"
+        <h4 style="visibility: #{JSFData.poultryRoastingVisibility}">Poultry Roasting</h4>
+        <h:dataTable style="visibility: #{JSFData.poultryRoastingVisibility}" id="table_poultry_roasting" var="PoultryRoasting" value="#{JSFData.poultryRoastings}"
                      styleClass="table">
             <h:column>
                 <f:facet name="header">Food Category</f:facet>
@@ -130,8 +130,8 @@
             </h:column>
         </h:dataTable>
 
-        <h4>Safe Temperature Cooking</h4>
-        <h:dataTable id="table_safe_temperature_cooking" var="SafeTemperatureCooking" value="#{JSFData.safeTemperatureCookings}"
+        <h4 style="visibility: #{JSFData.safeTemperatureCookingVisibility}">Safe Temperature Cooking</h4>
+        <h:dataTable style="visibility: #{JSFData.safeTemperatureCookingVisibility}" id="table_safe_temperature_cooking" var="SafeTemperatureCooking" value="#{JSFData.safeTemperatureCookings}"
                      styleClass="table">
             <h:column>
                 <f:facet name="header">Food Category</f:facet>
@@ -147,8 +147,8 @@
             </h:column>
         </h:dataTable>
 
-        <h4>Turkey Roasting</h4>
-        <h:dataTable id="table_turkey_roasting" var="TurkeyRoasting" value="#{JSFData.turkeyRoastings}"
+        <h4 style="visibility: #{JSFData.turkeyRoastingVisibility}">Turkey Roasting</h4>
+        <h:dataTable style="visibility: #{JSFData.turkeyRoastingVisibility}" id="table_turkey_roasting" var="TurkeyRoasting" value="#{JSFData.turkeyRoastings}"
                      styleClass="table">
             <h:column>
                 <f:facet name="header">Food Category</f:facet>
@@ -172,8 +172,8 @@
             </h:column>
         </h:dataTable>
 
-        <h4>Turkey Thawing</h4>
-        <h:dataTable id="table_turkey_thawing" var="TurkeyThawing" value="#{JSFData.turkeyThawings}"
+        <h4 style="visibility: #{JSFData.turkeyThawingVisibility}">Turkey Thawing</h4>
+        <h:dataTable style="visibility: #{JSFData.turkeyThawingVisibility}" id="table_turkey_thawing" var="TurkeyThawing" value="#{JSFData.turkeyThawings}"
                      styleClass="table">
             <h:column>
                 <f:facet name="header">Food Category</f:facet>

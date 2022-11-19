@@ -45,10 +45,17 @@ public class JSFData implements Serializable {
     public List<TurkeyThawing> turkeyThawings = new ArrayList<TurkeyThawing>();
 
     public String foodCategory = "";
-
     public String foodType = "";
-
     public String information = "";
+
+    public String coldFoodStorageVisibility = "hidden";
+    public String foodSafetyPowerOutageVisibility = "hidden";
+    public String hamCookingVisibility = "hidden";
+    public String meatRoastingVisibility = "hidden";
+    public String poultryRoastingVisibility = "hidden";
+    public String safeTemperatureCookingVisibility = "hidden";
+    public String turkeyRoastingVisibility = "hidden";
+    public String turkeyThawingVisibility = "hidden";
 
     @Autowired
     public JSFData(ColdFoodStorageRepository coldFoodStorageRepository, FoodSafetyPowerOutageRepository foodSafetyPowerOutageRepository, HamCookingRepository hamCookingRepository, MeatRoastingRepository meatRoastingRepository, PoultryRoastingRepository poultryRoastingRepository, SafeTemperatureCookingRepository safeTemperatureCookingRepository, TurkeyRoastingRepository turkeyRoastingRepository, TurkeyThawingRepository turkeyThawingRepository) {
@@ -88,6 +95,14 @@ public class JSFData implements Serializable {
         safeTemperatureCookings = safeTemperatureCookingService.findByCategoryAndType(this.foodType, this.foodCategory);
         turkeyRoastings = turkeyRoastingService.findByCategoryAndType(this.foodCategory);
         turkeyThawings = turkeyThawingService.findByCategoryAndType(this.foodCategory);
+        coldFoodStorageVisibility = coldFoodStorages != null && coldFoodStorages.size() > 0 ? "visisble" : "hidden";
+        foodSafetyPowerOutageVisibility = foodSafetyPowerOutages != null && foodSafetyPowerOutages.size() > 0 ? "visisble" : "hidden";
+        hamCookingVisibility = hamCookings != null && hamCookings.size() > 0 ? "visisble" : "hidden";
+        meatRoastingVisibility = meatRoastings != null && meatRoastings.size() > 0 ? "visisble" : "hidden";
+        poultryRoastingVisibility = poultryRoastings != null && poultryRoastings.size() > 0 ? "visisble" : "hidden";
+        safeTemperatureCookingVisibility = safeTemperatureCookings != null && safeTemperatureCookings.size() > 0 ? "visisble" : "hidden";
+        turkeyRoastingVisibility = turkeyRoastings != null && turkeyRoastings.size() > 0 ? "visisble" : "hidden";
+        turkeyThawingVisibility = turkeyThawings != null && turkeyThawings.size() > 0 ? "visisble" : "hidden";
     }
 
     public void getDataByInformation() {
@@ -107,6 +122,14 @@ public class JSFData implements Serializable {
         safeTemperatureCookings = safeTemperatureCookingService.findByInformation(this.information);
         turkeyRoastings = turkeyRoastingService.findByInformation(this.information);
         turkeyThawings = turkeyThawingService.findByInformation(this.information);
+        coldFoodStorageVisibility = coldFoodStorages != null && coldFoodStorages.size() > 0 ? "visisble" : "hidden";
+        foodSafetyPowerOutageVisibility = foodSafetyPowerOutages != null && foodSafetyPowerOutages.size() > 0 ? "visisble" : "hidden";
+        hamCookingVisibility = hamCookings != null && hamCookings.size() > 0 ? "visisble" : "hidden";
+        meatRoastingVisibility = meatRoastings != null && meatRoastings.size() > 0 ? "visisble" : "hidden";
+        poultryRoastingVisibility = poultryRoastings != null && poultryRoastings.size() > 0 ? "visisble" : "hidden";
+        safeTemperatureCookingVisibility = safeTemperatureCookings != null && safeTemperatureCookings.size() > 0 ? "visisble" : "hidden";
+        turkeyRoastingVisibility = turkeyRoastings != null && turkeyRoastings.size() > 0 ? "visisble" : "hidden";
+        turkeyThawingVisibility = turkeyThawings != null && turkeyThawings.size() > 0 ? "visisble" : "hidden";
     }
 
     public String getFoodCategory() {
@@ -195,5 +218,69 @@ public class JSFData implements Serializable {
 
     public void setTurkeyThawings(List<TurkeyThawing> turkeyThawings) {
         this.turkeyThawings = turkeyThawings;
+    }
+
+    public String getColdFoodStorageVisibility() {
+        return coldFoodStorageVisibility;
+    }
+
+    public void setColdFoodStorageVisibility(String coldFoodStorageVisibility) {
+        this.coldFoodStorageVisibility = coldFoodStorageVisibility;
+    }
+
+    public String getFoodSafetyPowerOutageVisibility() {
+        return foodSafetyPowerOutageVisibility;
+    }
+
+    public void setFoodSafetyPowerOutageVisibility(String foodSafetyPowerOutageVisibility) {
+        this.foodSafetyPowerOutageVisibility = foodSafetyPowerOutageVisibility;
+    }
+
+    public String getHamCookingVisibility() {
+        return hamCookingVisibility;
+    }
+
+    public void setHamCookingVisibility(String hamCookingVisibility) {
+        this.hamCookingVisibility = hamCookingVisibility;
+    }
+
+    public String getMeatRoastingVisibility() {
+        return meatRoastingVisibility;
+    }
+
+    public void setMeatRoastingVisibility(String meatRoastingVisibility) {
+        this.meatRoastingVisibility = meatRoastingVisibility;
+    }
+
+    public String getPoultryRoastingVisibility() {
+        return poultryRoastingVisibility;
+    }
+
+    public void setPoultryRoastingVisibility(String poultryRoastingVisibility) {
+        this.poultryRoastingVisibility = poultryRoastingVisibility;
+    }
+
+    public String getSafeTemperatureCookingVisibility() {
+        return safeTemperatureCookingVisibility;
+    }
+
+    public void setSafeTemperatureCookingVisibility(String safeTemperatureCookingVisibility) {
+        this.safeTemperatureCookingVisibility = safeTemperatureCookingVisibility;
+    }
+
+    public String getTurkeyRoastingVisibility() {
+        return turkeyRoastingVisibility;
+    }
+
+    public void setTurkeyRoastingVisibility(String turkeyRoastingVisibility) {
+        this.turkeyRoastingVisibility = turkeyRoastingVisibility;
+    }
+
+    public String getTurkeyThawingVisibility() {
+        return turkeyThawingVisibility;
+    }
+
+    public void setTurkeyThawingVisibility(String turkeyThawingVisibility) {
+        this.turkeyThawingVisibility = turkeyThawingVisibility;
     }
 }
